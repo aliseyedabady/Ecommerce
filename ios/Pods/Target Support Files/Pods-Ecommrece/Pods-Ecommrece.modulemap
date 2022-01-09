@@ -1,0 +1,6 @@
+module Pods_Ecommrece {
+  umbrella header "Pods-Ecommrece-umbrella.h"
+
+  export *
+  module * { export * }
+}

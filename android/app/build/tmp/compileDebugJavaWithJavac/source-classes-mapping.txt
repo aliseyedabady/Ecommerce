@@ -1,0 +1,14 @@
+com/ecommrece/MainActivity.java
+ com.ecommrece.MainActivity
+com/ecommrece/BuildConfig.java
+ com.ecommrece.BuildConfig
+com/ecommrece/ReactNativeFlipper.java
+ com.ecommrece.ReactNativeFlipper
+ com.ecommrece.ReactNativeFlipper$1
+ com.ecommrece.ReactNativeFlipper$2
+ com.ecommrece.ReactNativeFlipper$2$1
+com/ecommrece/MainApplication.java
+ com.ecommrece.MainApplication
+ com.ecommrece.MainApplication$1
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
