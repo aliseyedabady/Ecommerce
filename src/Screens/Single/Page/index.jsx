@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import Layout from '../../../Components/Layout/Info';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {widthPercent, Colors} from '../../../Components/Utils';
@@ -34,6 +34,54 @@ const index = ({route}) => {
           }}>
           {data.message}
         </Text>
+        <View
+          style={{
+            flexDirection: 'row',
+            marginTop: widthPercent(3),
+            alignItems: 'center',
+          }}>
+          <TouchableOpacity
+            style={{
+              padding: widthPercent(2),
+              backgroundColor: Colors.black,
+              borderRadius: widthPercent(1),
+            }}>
+            <AntDesign
+              name="minus"
+              size={widthPercent(4)}
+              color={Colors.white}
+            />
+          </TouchableOpacity>
+          <Text style={{marginHorizontal: widthPercent(2)}}>01</Text>
+          <TouchableOpacity
+            style={{
+              padding: widthPercent(2),
+              backgroundColor: Colors.black,
+              borderRadius: widthPercent(1),
+            }}>
+            <AntDesign
+              name="plus"
+              size={widthPercent(4)}
+              color={Colors.white}
+            />
+            {/* minus */}
+          </TouchableOpacity>
+        </View>
+        <View
+          style={{
+            flexDirection: 'row',
+            marginTop: widthPercent(3),
+          }}>
+          <Text style={{marginRight: widthPercent(3)}}>Delivered In</Text>
+          <AntDesign
+            name="clockcircleo"
+            size={widthPercent(4)}
+            style={{marginRight: widthPercent(1.8)}}
+          />
+          <View>
+            <Text>28 Min</Text>
+          </View>
+        </View>
       </View>
     </Layout>
   );
