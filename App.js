@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import * as React from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
@@ -11,29 +12,45 @@ import { Colors, widthPercent } from "./src/Components/Utils"
 import Ionicons from "react-native-vector-icons/Ionicons"
 import FontAwesome from "react-native-vector-icons/FontAwesome"
 import EvilIcons from "react-native-vector-icons/EvilIcons"
+import AntDesign from "react-native-vector-icons/AntDesign"
 import SingleScreen from "./src/Screens/Single/Page"
+import {
+  createDrawerNavigator, DrawerContentScrollView,
+  DrawerItemList,
+  DrawerItem,
+} from '@react-navigation/drawer';
+
 // FontAwesome EvilIcons
 
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
 export default function App() {
   return (
     <>
+
       <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen
-            name="Main"
-            component={Home}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen name="Single" options={{ headerShown: false }} component={SingleScreen} />
-          {/* <Stack.Screen name="Settings" component={Settings} /> */}
-        </Stack.Navigator>
+        <Drawer.Navigator drawerContent={(props) => <CustomDrawerContent {...props} />}>
+          <Drawer.Screen options={{ headerShown: false }} name="Home" component={Home} />
+          {/* <Drawer.Screen name="Article" component={Article} /> */}
+        </Drawer.Navigator>
       </NavigationContainer>
 
     </>
 
+  );
+}
+const CustomDrawerContent = (props) => {
+  return (
+    <DrawerContentScrollView {...props}>
+      <View style={{ flexDirection: "row", marginHorizontal: widthPercent(4), alignItems: "center" }}>
+        <AntDesign name='user' size={widthPercent(6)} />
+        <Text>
+          Profile
+        </Text>
+      </View>
+    </DrawerContentScrollView>
   );
 }
 const Home = () => {

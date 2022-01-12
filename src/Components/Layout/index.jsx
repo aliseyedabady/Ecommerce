@@ -9,7 +9,10 @@ import {
 import {Colors, widthPercent} from '../Utils';
 import Octicons from 'react-native-vector-icons/Octicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-const Index = ({children, navigation}) => {
+import {useNavigation, useRoute} from '@react-navigation/native';
+
+const Index = ({children}) => {
+  const navigation = useNavigation();
   const [show, setshow] = useState(false);
   return (
     <View
@@ -27,11 +30,13 @@ const Index = ({children, navigation}) => {
           alignItems: 'center',
         }}>
         {!show && (
-          <Octicons
-            size={widthPercent(6)}
-            color={Colors.gray}
-            name="three-bars"
-          />
+          <TouchableOpacity onPress={() => navigation.openDrawer()}>
+            <Octicons
+              size={widthPercent(6)}
+              color={Colors.gray}
+              name="three-bars"
+            />
+          </TouchableOpacity>
         )}
 
         {show && (
